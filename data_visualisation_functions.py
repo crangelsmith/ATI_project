@@ -18,7 +18,7 @@ def plot_timeseries_df(df, linewidth=5):
     ax.legend(bbox_to_anchor=(1.1, 1.05))
 
 
-def timeseries_for_clusters_mean(cluster_df):
+def timeseries_for_clusters_mean(cluster_df,size=(16, 8)):
     conc_df = []
     for name, group in cluster_df.groupby('cluster'):
         conc_df.append(pd.DataFrame(group.apply(np.mean, axis=0).T.rename("Cluser " + str(name))))
@@ -27,7 +27,7 @@ def timeseries_for_clusters_mean(cluster_df):
     final_df = final_df.drop(['cluster'])
 
     final_df.index = pd.to_datetime(final_df.index.values, format='%Y')
-    ax = final_df.plot(figsize=(16, 8), linewidth=5, fontsize=20)
+    ax = final_df.plot(figsize=size, linewidth=5, fontsize=20)
     ax.set_xlabel("Year", fontsize=20)
     ax.set_ylabel("Under 5 child mortality", fontsize=20)
     ax.legend(bbox_to_anchor=(1.1, 1.05))
