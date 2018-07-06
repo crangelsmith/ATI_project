@@ -32,3 +32,6 @@ def timeseries_for_clusters_mean(cluster_df,size=(16, 8)):
     ax.set_xlabel("Year", fontsize=20)
     ax.set_ylabel("Under 5 child mortality", fontsize=20)
     ax.legend(bbox_to_anchor=(1.1, 1.05))
+
+
+# jupyter nbconvert Presentation_PCA_Clustering.ipynb --to slides --post serve
