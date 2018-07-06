@@ -34,5 +34,4 @@ def timeseries_for_clusters_mean(cluster_df,size=(16, 8)):
     ax.legend(bbox_to_anchor=(1.1, 1.05))
 
 
-
 # jupyter nbconvert Presentation_PCA_Clustering.ipynb --to slides --post serve
